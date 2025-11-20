@@ -26,17 +26,17 @@ const translations = {
     'hero.intro': "I'm",
     'hero.name': 'AHMED FAIYAZ',
     'hero.title': 'Full Stack Developer',
-    'hero.description': 'Crafting elegant digital experiences with modern web technologies. Passionate about creating intuitive, performant, and beautiful applications.',
-    'hero.cta': 'Get In Touch',
+    'hero.description': 'Tokyo-based developer crafting warm, fast web experiences for real people. I obsess over the details that make a product feel alive.',
+    'hero.cta': 'Say Hello',
     
     // About
     'about.title': 'About Me',
-    'about.headline': 'I create digital experiences that inspire and engage',
-    'about.intro': "Hello! I'm Ahmed Faiyaz, a passionate Full Stack Developer based in Tokyo, Japan. With a keen eye for design and a love for clean code, I transform ideas into elegant digital solutions.",
-    'about.journey': 'My journey in web development has been driven by curiosity and a commitment to continuous learning. I specialize in building responsive, user-centric applications that not only look great but perform flawlessly.',
-    'about.passion': 'When I\'m not coding, you\'ll find me exploring Tokyo\'s vibrant streets with my camera, capturing moments that tell stories. Photography has taught me to see details others might miss—a skill that translates beautifully into crafting pixel-perfect interfaces.',
-    'about.philosophy': "I believe in the power of technology to connect people and create meaningful experiences. Whether it's a sleek portfolio, a robust web application, or an innovative digital solution, I approach every project with dedication and creativity.",
-    'about.cta': "Let's build something amazing together!",
+    'about.headline': 'Human stories translated into useful interfaces',
+    'about.intro': "I'm Ahmed Faiyaz, a Bangladeshi-born developer now rooted in Tokyo. I blend product thinking, design sensitivity, and reliable engineering to turn messy ideas into calm digital spaces.",
+    'about.journey': 'Years of freelancing and agency work taught me to listen first, prototype fast, and deliver code that teams can trust long after launch.',
+    'about.passion': "When I'm not coding, I'm walking Tokyo with my camera—collecting quiet details like light on concrete or strangers laughing. That habit shapes how I think about UI rhythms and micro-interactions.",
+    'about.philosophy': "Software should feel considerate. Whether it's a portfolio, internal tool, or launch site, I work closely with clients to understand the real problem before opening my editor.",
+    'about.cta': "Let's build something honest together.",
     
     // Skills
     'skills.title': 'Skills & Technologies',
@@ -49,21 +49,21 @@ const translations = {
     // Services
     'services.title': 'Services',
     'services.uiux.title': 'UI/UX Design',
-    'services.uiux.desc': 'Creating intuitive and visually stunning user interfaces that enhance user experience and drive engagement.',
+    'services.uiux.desc': 'From workshops to clickable prototypes, I map journeys and craft calm interfaces that feel familiar on day one.',
     'services.webdev.title': 'Web Development',
-    'services.webdev.desc': 'Building responsive, high-performance websites and web applications using modern frameworks and best practices.',
+    'services.webdev.desc': 'Clean, reusable components with progressive enhancement so your site stays fast on any device.',
     'services.backend.title': 'Backend Development',
-    'services.backend.desc': 'Developing robust server-side applications with secure APIs and efficient database management.',
-    'services.customization.title': 'Customization',
-    'services.customization.desc': 'Tailoring solutions to your unique needs with flexible configurations and personalized features.',
+    'services.backend.desc': 'Reliable APIs and background jobs built with TypeScript/Node or Python, always documented for handoff.',
+    'services.customization.title': 'Product Support',
+    'services.customization.desc': 'Need tweaks on an existing site? I jump into legacy code, tidy things up, and leave notes so your team can keep moving.',
     'services.mobile.title': 'Mobile Development',
-    'services.mobile.desc': 'Developing cross-platform mobile applications with native performance and seamless user experiences.',
+    'services.mobile.desc': 'React Native / Expo apps with a shared design language, tuned for both major platforms.',
     'services.ecommerce.title': 'E-Commerce Solutions',
-    'services.ecommerce.desc': 'Building robust online stores with secure payment integration and optimized conversion funnels.',
+    'services.ecommerce.desc': 'Conversion-focused storefronts with thoughtful product storytelling, secure checkout, and understandable analytics.',
     'services.api.title': 'API Development',
-    'services.api.desc': 'Designing and implementing RESTful APIs and backend services for scalable applications.',
+    'services.api.desc': 'REST or GraphQL endpoints with monitoring hooks so you know about issues before your customers do.',
     'services.consulting.title': 'Technical Consulting',
-    'services.consulting.desc': 'Providing expert guidance on architecture, tech stack selection, and optimization strategies.',
+    'services.consulting.desc': 'Honest guidance on stack choices, shipping strategy, and how to grow an efficient product team.',
     
     // Projects
     'projects.title': 'Projects',
@@ -72,24 +72,24 @@ const translations = {
     'projects.sourceCode': 'Source Code',
     
     'projects.qrcode.title': 'QR Code',
-    'projects.qrcode.desc': 'weblink turn to QR Code',
+    'projects.qrcode.desc': 'Playful QR generator for pop-up events so teams can share menus in seconds.',
     'projects.qrcode.tags': 'React, TypeScript, QR Library',
     
     'projects.travelsite.title': 'Travel Site',
-    'projects.travelsite.desc': 'Discover your next adventure',
+    'projects.travelsite.desc': 'Weekend inspiration site pairing curated journeys with local tips.',
     'projects.travelsite.tags': 'React, Tailwind, API',
     
     'projects.groupware.title': 'Groupware',
-    'projects.groupware.desc': 'Team collaboration platform',
+    'projects.groupware.desc': 'Lightweight team hub that keeps async updates tidy for distributed crews.',
     'projects.groupware.tags': 'Next.js, TypeScript, Supabase',
     
     'projects.schoolhub.title': 'School HUB',
-    'projects.schoolhub.desc': 'Educational management system',
+    'projects.schoolhub.desc': 'School dashboard keeping teachers, parents, and students on the same page.',
     'projects.schoolhub.tags': 'React, Node.js, MongoDB',
     
     'projects.portfolio.title': 'Portfolio',
-    'projects.portfolio.desc': 'Personal showcase website',
-    'projects.portfolio.tags': 'React, Motion, Figma',
+    'projects.portfolio.desc': 'Living portfolio focused on motion, storytelling, and accessibility.',
+    'projects.portfolio.tags': 'React, Motion, カスタムUI',
     
     // Blogs
     'blogs.title': 'Blogs',
@@ -128,7 +128,7 @@ const translations = {
     
     // Footer
     'footer.tagline': 'Full Stack Developer & Designer',
-    'footer.description': 'Creating digital experiences that inspire and engage. Let\'s build something amazing together.',
+    'footer.description': "Crafting thoughtful digital experiences from Tokyo. If something here sparks an idea, let's chat.",
     'footer.quickLinks': 'Quick Links',
     'footer.connect': 'Connect',
     'footer.rights': 'All rights reserved.',
@@ -150,17 +150,17 @@ const translations = {
     'hero.intro': '私は',
     'hero.name': 'アーメド  ファイヤーズ',
     'hero.title': 'フルスタック開発者',
-    'hero.description': '最新のウェブ技術でエレガントなデジタル体験を創造しています。直感的で高性能、美しいアプリケーションの開発に情熱を注いでいます。',
-    'hero.cta': 'お問い合わせ',
+    'hero.description': '東京を拠点に、人の温度を感じる高速なウェブ体験をつくっています。細部までこだわり、画面に息づかいを与えるのが得意です。',
+    'hero.cta': '気軽に相談する',
     
     // About
     'about.title': '私について',
-    'about.headline': 'インスピレーションと関わりを生み出すデジタル体験を創造します',
-    'about.intro': 'こんにちは！私はアハメッド・ファイヤズ、東京を拠点とする情熱的なフルスタック開発者です。デザインへの鋭い目とクリーンなコードへの愛情を持ち、アイデアをエレガントなデジタルソリューションに変えています。',
-    'about.journey': '私のウェブ開発の旅は、好奇心と継続的な学習への献身によって推進されてきました。見た目が素晴らしいだけでなく、完璧に機能するレスポンシブでユーザー中心のアプリケーションの構築を専門としています。',
-    'about.passion': 'コーディングをしていないときは、カメラを持って東京の活気ある街を探索し、物語を語る瞬間を捉えています。写真撮影は、他の人が見逃すかもしれない細部を見る能力を教えてくれました。これは、ピクセルパーフェクトなインターフェイスを作り上げることに美しく変換されるスキルです。',
-    'about.philosophy': '私は、人々をつなぎ、意味のある体験を創造するテクノロジーの力を信じています。洗練されたポートフォリオであれ、堅牢なウェブアプリケーションであれ、革新的なデジタルソリューションであれ、すべてのプロジェクトに献身と創造性を持って取り組んでいます。',
-    'about.cta': '一緒に素晴らしいものを作りましょう！',
+    'about.headline': '人の物語を役立つインターフェースへ落とし込む',
+    'about.intro': 'バングラデシュ出身で東京在住の開発者、アーメド・ファイヤーズです。プロダクト視点とデザイン感覚、そして堅実なエンジニアリングを掛け合わせ、曖昧なアイデアを落ち着いたデジタル体験へ育てています。',
+    'about.journey': '学生時代の小さな開発から、フリーランスや制作会社での案件まで。耳を傾け、すばやく試作し、リリース後も安心して使えるコードを届ける方法を学びました。',
+    'about.passion': '気分転換はカメラを持って東京を歩くこと。コンクリートに落ちる光やふとした笑い声など、ささやかな瞬間を切り取る時間が、UIのリズムやマイクロインタラクションへの気づきにつながっています。',
+    'about.philosophy': 'ソフトウェアは思いやりを感じさせる存在であるべきだと考えています。ポートフォリオから社内ツール、ローンチサイトまで、コーディングを始める前に課題の本質をチームと一緒に深掘りします。',
+    'about.cta': '一緒にまっすぐなプロダクトを作りましょう。',
     
     // Skills
     'skills.title': 'スキル & 技術',
@@ -173,21 +173,21 @@ const translations = {
     // Services
     'services.title': 'サービス',
     'services.uiux.title': 'UI/UXデザイン',
-    'services.uiux.desc': 'ユーザー体験を向上させ、エンゲージメントを促進する直感的で視覚的に魅力的なユーザーインターフェイスを作成します。',
+    'services.uiux.desc': 'ワークショップからプロトタイプまで、ユーザージャーニーを整理し、初日から馴染む落ち着いたUIを描きます。',
     'services.webdev.title': 'ウェブ開発',
-    'services.webdev.desc': '最新のフレームワークとベストプラクティスを使用して、レスポンシブで高性能なウェブサイトとウェブアプリケーションを構築します。',
+    'services.webdev.desc': 'どのデバイスでも速く動くよう、再利用しやすいコンポーネントとプログレッシブエンハンスメントを徹底します。',
     'services.backend.title': 'バックエンド開発',
-    'services.backend.desc': 'セキュアなAPIと効率的なデータベース管理を持つ堅牢なサーバーサイドアプリケーションを開発します。',
-    'services.customization.title': 'カスタマイズ',
-    'services.customization.desc': '柔軟な構成とパーソナライズされた機能を使用して、ユニークなニーズに合わせたソリューションを調整します。',
+    'services.backend.desc': 'TypeScript/NodeやPythonで堅実なAPIやバッチ処理を構築し、引き継ぎ用のドキュメントも忘れません。',
+    'services.customization.title': 'プロダクトサポート',
+    'services.customization.desc': '既存サイトの微調整や保守も歓迎。レガシーコードを整え、チームが続きの作業をしやすいようメモを残します。',
     'services.mobile.title': 'モバイル開発',
-    'services.mobile.desc': 'ネイティブのパフォーマンスとシームレスなユーザー体験を持つクロスプラットフォームのモバイルアプリケーションを開発します。',
+    'services.mobile.desc': 'React NativeやExpoを使い、プラットフォームをまたいでも統一感のあるアプリを制作します。',
     'services.ecommerce.title': 'Eコマースソリューション',
-    'services.ecommerce.desc': '安全な決済統合と最適化されたコンバージョンファネルを備えた堅牢なオンラインストアを構築します。',
+    'services.ecommerce.desc': '商品ストーリーを伝えるコンテンツ、安心できる決済、読みやすい分析環境をセットで提供します。',
     'services.api.title': 'API開発',
-    'services.api.desc': 'スケーラブルなアプリケーション向けのRESTful APIとバックエンドサービスを設計および実装します。',
+    'services.api.desc': 'REST / GraphQL問わず、モニタリングまで含めたAPIを構築し、障害をユーザーより先に検知できるようにします。',
     'services.consulting.title': '技術コンサルティング',
-    'services.consulting.desc': 'アーキテクチャ、技術スタックの選択、最適化戦略に関する専門的なガイダンスを提供します。',
+    'services.consulting.desc': '技術選定や採用計画、ローンチ戦略まで、現場目線のアドバイスをお届けします。',
     
     // Projects
     'projects.title': 'プロジェクト',
@@ -196,24 +196,24 @@ const translations = {
     'projects.sourceCode': 'ソースコード',
     
     'projects.qrcode.title': 'QRコード',
-    'projects.qrcode.desc': 'ウェブリンクをQRコードに変換',
+    'projects.qrcode.desc': 'ポップアップイベント向けに作ったQRジェネレーター。リンクをすぐ共有できます。',
     'projects.qrcode.tags': 'React, TypeScript, QRライブラリ',
     
     'projects.travelsite.title': 'トラベルサイト',
-    'projects.travelsite.desc': '次の冒険を見つけよう',
+    'projects.travelsite.desc': '週末旅のアイデアとローカル情報をまとめたインスピレーションサイト。',
     'projects.travelsite.tags': 'React, Tailwind, API',
     
     'projects.groupware.title': 'グループウェア',
-    'projects.groupware.desc': 'チーム協力プラットフォーム',
+    'projects.groupware.desc': '分散チームの非同期コミュニケーションを整える軽量グループウェア。',
     'projects.groupware.tags': 'Next.js, TypeScript, Supabase',
     
     'projects.schoolhub.title': 'スクールHUB',
-    'projects.schoolhub.desc': '教育管理システム',
+    'projects.schoolhub.desc': '先生・保護者・生徒が同じ画面で状況を共有できる学校ダッシュボード。',
     'projects.schoolhub.tags': 'React, Node.js, MongoDB',
     
     'projects.portfolio.title': 'ポートフォリオ',
-    'projects.portfolio.desc': '個人のショーケースウェブサイト',
-    'projects.portfolio.tags': 'React, Motion, Figma',
+    'projects.portfolio.desc': 'モーションとストーリーテリングにこだわった現在進行形のポートフォリオ。',
+    'projects.portfolio.tags': 'React, Motion, Custom UI',
     
     // Blogs
     'blogs.title': 'ブログ',
@@ -252,7 +252,7 @@ const translations = {
     
     // Footer
     'footer.tagline': 'フルスタック開発者＆デザイナー',
-    'footer.description': 'インスピレーションと関わりを生み出すデジタル体験を創造しています。一緒に素晴らしいものを作りましょう。',
+    'footer.description': '東京から丁寧なデジタル体験をお届けしています。気になることがあれば、いつでもご連絡ください。',
     'footer.quickLinks': 'クイックリンク',
     'footer.connect': '繋がる',
     'footer.rights': '無断転載禁止。',

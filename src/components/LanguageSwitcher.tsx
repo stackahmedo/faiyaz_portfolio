@@ -17,7 +17,10 @@ export function LanguageSwitcher() {
   return (
     <div className="relative">
       {/* Horizontal Language Switcher - Smaller Version */}
-      <div className="flex items-center gap-1.5 px-2 py-1 bg-[#0e1b2d]/80 backdrop-blur-md border border-[#5cb6ff]/30 rounded-full relative overflow-hidden group">
+      <div
+        className="flex items-center gap-1.5 px-2 py-1 backdrop-blur-md border border-[#5cb6ff]/30 rounded-full relative overflow-hidden group"
+        style={{ backgroundColor: "var(--color-surface-glass)" }}
+      >
         {/* Background gradient */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-[#5cb6ff]/5 to-[#4373b5]/5"
@@ -71,9 +74,13 @@ export function LanguageSwitcher() {
                 <span className="text-sm relative z-10">{lang.flag}</span>
 
                 {/* Language code - smaller */}
-                <span className={`text-[10px] font-medium relative z-10 transition-colors hidden sm:inline ${
-                  isActive ? 'text-[#5cb6ff]' : 'text-white/70'
-                }`}>
+                <span
+                  className={`text-[10px] font-medium relative z-10 transition-colors hidden sm:inline ${
+                    isActive
+                      ? "text-[#5cb6ff]"
+                      : "text-[color:var(--color-text-muted)]"
+                  }`}
+                >
                   {lang.code.toUpperCase()}
                 </span>
 

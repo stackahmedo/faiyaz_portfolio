@@ -51,12 +51,12 @@ export function Navigation() {
     { label: t("nav.contact"), id: "contact" },
   ];
 
+  const navBackground = scrolled ? "bg-[color:var(--color-nav-solid)]" : "bg-[color:var(--color-nav-soft)]";
+
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-[#00337a]/98 backdrop-blur-md shadow-lg shadow-[#5cb6ff]/10" 
-          : "bg-[#00337a]/95 backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBackground} ${
+        scrolled ? "backdrop-blur-md shadow-lg shadow-[#5cb6ff]/10" : "backdrop-blur-sm"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -70,7 +70,7 @@ export function Navigation() {
           {/* Mobile menu button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-white relative z-10"
+            className="lg:hidden p-2 text-[color:var(--color-text-primary)] relative z-10"
             aria-label="Toggle menu"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -106,15 +106,19 @@ export function Navigation() {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative text-white transition-colors group"
+                className="relative text-[color:var(--color-text-primary)] transition-colors group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                <span className={`relative z-10 transition-colors duration-300 ${
-                  activeSection === item.id ? "text-[#5cb6ff]" : "group-hover:text-[#5cb6ff]"
-                }`}>
+                <span
+                  className={`relative z-10 transition-colors duration-300 ${
+                    activeSection === item.id
+                      ? "text-[#5cb6ff]"
+                      : "text-[color:var(--color-text-primary)] group-hover:text-[#5cb6ff]"
+                  }`}
+                >
                   {item.label}
                 </span>
                 
@@ -142,7 +146,7 @@ export function Navigation() {
 
           {/* Language Switcher */}
           <motion.div 
-            className="ml-auto lg:ml-0"
+            className="ml-auto lg:ml-0 flex items-center"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -167,7 +171,9 @@ export function Navigation() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`block w-full text-left py-3 px-4 transition-all relative group ${
-                      activeSection === item.id ? "text-[#5cb6ff]" : "text-white"
+                      activeSection === item.id
+                        ? "text-[#5cb6ff]"
+                        : "text-[color:var(--color-text-primary)]"
                     }`}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}

@@ -1,4 +1,4 @@
-import svgPaths from "../imports/svg-2vhfh7e81g";
+import svgPaths from "../data/skillSvgPaths";
 
 export function FirestoreIcon() {
   return (

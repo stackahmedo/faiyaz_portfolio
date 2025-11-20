@@ -1,40 +1,40 @@
-import imgAdobePhotoshop from "figma:asset/eef2fdb563e91b9c3f45d1adb750e7cd36dc8566.png";
-import imgAdobeIllustrator from "figma:asset/b4c5996c40ec24752a95fc0ae044b935e51cdb66.png";
-import imgAdobeXd from "figma:asset/facf2129f350649bf95999fa986d64d655cafa8c.png";
-import imgFigma from "figma:asset/8b6ce52428c401487c06a946576ec50d57e3d1b3.png";
-import imgSketch from "figma:asset/823a3e7b1afac75c8954ccc248abf063c7cda2ea.png";
-import imgHtml6 from "figma:asset/e50a160042082bf3d7ff6a37bc89c5fa7f520245.png";
-import imgCss3 from "figma:asset/b17a351f9c703c713d6d65ce36025dc0c051cfff.png";
-import imgJavaScript from "figma:asset/23806f2c14e1585bb19e0600c313b3f946aad98b.png";
-import imgReact from "figma:asset/514b7addd2b426d61689b2e9d91529b32e7361f4.png";
-import imgTailwindCss from "figma:asset/1424d24997551c51efa1846072fcd223071b5429.png";
-import imgTypeScript from "figma:asset/daa0d0d8efc0720c4d256ad91751481519ac49ae.png";
-import imgCProgramming from "figma:asset/2e5d57747389287a093bd2a94982b69e47a8ef48.png";
-import imgC from "figma:asset/711e62513fdeb3e3978d960a4382f718ab0bdba1.png";
-import imgPhpLogo from "figma:asset/7a2ccc9a89d7a9966ae22345a9c7e7b8c160609b.png";
-import imgNodeJs from "figma:asset/bfe0e57cd3aace52aa3af0d6f9d9b26c256fec4a.png";
-import imgPython from "figma:asset/807e6d26e97c4fe1c5e248cfe48374416495f3f4.png";
-import imgJava from "figma:asset/13bfc0d341d95ec6a69134c0fe47710b58b8ccef.png";
-import imgDocker from "figma:asset/d5cc00c0207b52fa26cf272bb91b9326279333cd.png";
-import imgMySqlLogo from "figma:asset/22916b6b3062cb41a11f6f5744e9c19494eeebb9.png";
-import imgFirebase from "figma:asset/c1655b94b6b388a74858b06ee4f550112f28ba32.png";
-import imgSupabase from "figma:asset/544f56d45ec05bddd27652b3366d8ebc9f963070.png";
-import imgMongoDb from "figma:asset/461cbfedce83342b7def044771b6566e0ff44adc.png";
-import imgOracleLogo from "figma:asset/5e0d2571da02e181049e8f740048ab8c62fe797c.png";
-import imgChatGpt from "figma:asset/d2c1f3ffd53c0cd871b37b039600aaf5bd0aa5ce.png";
-import imgAi from "figma:asset/29dcb62f80fe96fe5fc054858011f594ed48e70c.png";
-import imgPostmanInc from "figma:asset/507b53137c0a623ed9da69562d932f6bbdff0d95.png";
-import imgNpm from "figma:asset/0c12ca7a629312762022a27341496ac27d739676.png";
-import imgVisualStudioCode2020 from "figma:asset/1cd9e19622984e47284f61afad27f95901ca5704.png";
-import imgGit from "figma:asset/c47d5565b87e261d830ce8afd46eac81941277e5.png";
-import imgGitHub from "figma:asset/e39af590a1199ee3c954e6ee50c17608a3494a82.png";
-import imgWix from "figma:asset/20583325ffc0446e4a36ee436b832eebfbdc90eb.png";
-import imgShopify from "figma:asset/f2d5d281477a36bd8d8f8707b2d05c8452d7cbc1.png";
-import imgWordPress from "figma:asset/b0f72847abd9b9439ac32b5daf65ccf968f36425.png";
-import imgMicrosoftOffice2019 from "figma:asset/df97648facc5ba8a57045cc6c6431594efbf2132.png";
-import imgNotion from "figma:asset/8790947bd5370d3cdbe4662588b04da5b53c0bc2.png";
-import imgSlack from "figma:asset/4f5b913a103090fd28f75b4ec44e81dbe7c8a632.png";
-import imgPerplexityAi from "figma:asset/e38eb9829547856bb393f9b9186c6b63622430e6.png";
+import imgAdobePhotoshop from "../assets/eef2fdb563e91b9c3f45d1adb750e7cd36dc8566.png";
+import imgAdobeIllustrator from "../assets/b4c5996c40ec24752a95fc0ae044b935e51cdb66.png";
+import imgAdobeXd from "../assets/facf2129f350649bf95999fa986d64d655cafa8c.png";
+import imgSketch from "../assets/823a3e7b1afac75c8954ccc248abf063c7cda2ea.png";
+import imgHtml6 from "../assets/e50a160042082bf3d7ff6a37bc89c5fa7f520245.png";
+import imgCss3 from "../assets/b17a351f9c703c713d6d65ce36025dc0c051cfff.png";
+import imgJavaScript from "../assets/23806f2c14e1585bb19e0600c313b3f946aad98b.png";
+import imgReact from "../assets/514b7addd2b426d61689b2e9d91529b32e7361f4.png";
+import imgTailwindCss from "../assets/1424d24997551c51efa1846072fcd223071b5429.png";
+import imgTypeScript from "../assets/daa0d0d8efc0720c4d256ad91751481519ac49ae.png";
+import imgCProgramming from "../assets/2e5d57747389287a093bd2a94982b69e47a8ef48.png";
+import imgC from "../assets/711e62513fdeb3e3978d960a4382f718ab0bdba1.png";
+import imgPhpLogo from "../assets/7a2ccc9a89d7a9966ae22345a9c7e7b8c160609b.png";
+import imgNodeJs from "../assets/bfe0e57cd3aace52aa3af0d6f9d9b26c256fec4a.png";
+import imgPython from "../assets/807e6d26e97c4fe1c5e248cfe48374416495f3f4.png";
+import imgJava from "../assets/13bfc0d341d95ec6a69134c0fe47710b58b8ccef.png";
+import imgDocker from "../assets/d5cc00c0207b52fa26cf272bb91b9326279333cd.png";
+import imgMySqlLogo from "../assets/22916b6b3062cb41a11f6f5744e9c19494eeebb9.png";
+import imgFirebase from "../assets/c1655b94b6b388a74858b06ee4f550112f28ba32.png";
+import imgSupabase from "../assets/544f56d45ec05bddd27652b3366d8ebc9f963070.png";
+import imgMongoDb from "../assets/461cbfedce83342b7def044771b6566e0ff44adc.png";
+import imgOracleLogo from "../assets/5e0d2571da02e181049e8f740048ab8c62fe797c.png";
+import imgChatGpt from "../assets/d2c1f3ffd53c0cd871b37b039600aaf5bd0aa5ce.png";
+import imgAi from "../assets/29dcb62f80fe96fe5fc054858011f594ed48e70c.png";
+import imgPostmanInc from "../assets/507b53137c0a623ed9da69562d932f6bbdff0d95.png";
+import imgNpm from "../assets/0c12ca7a629312762022a27341496ac27d739676.png";
+import imgVisualStudioCode2020 from "../assets/1cd9e19622984e47284f61afad27f95901ca5704.png";
+import imgGit from "../assets/c47d5565b87e261d830ce8afd46eac81941277e5.png";
+import imgGitHub from "../assets/e39af590a1199ee3c954e6ee50c17608a3494a82.png";
+import imgWix from "../assets/20583325ffc0446e4a36ee436b832eebfbdc90eb.png";
+import imgShopify from "../assets/f2d5d281477a36bd8d8f8707b2d05c8452d7cbc1.png";
+import imgWordPress from "../assets/b0f72847abd9b9439ac32b5daf65ccf968f36425.png";
+import imgMicrosoftOffice2019 from "../assets/df97648facc5ba8a57045cc6c6431594efbf2132.png";
+import imgNotion from "../assets/8790947bd5370d3cdbe4662588b04da5b53c0bc2.png";
+import imgSlack from "../assets/4f5b913a103090fd28f75b4ec44e81dbe7c8a632.png";
+import imgPerplexityAi from "../assets/e38eb9829547856bb393f9b9186c6b63622430e6.png";
+import { ReactNode } from "react";
 import { motion } from "motion/react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { 
@@ -51,7 +51,7 @@ import {
 interface Skill {
   name: string;
   icon?: string;
-  iconComponent?: React.ReactNode;
+  iconComponent?: ReactNode;
 }
 
 interface SkillCategory {
@@ -66,7 +66,6 @@ const skillCategories: SkillCategory[] = [
       { name: "PhotoShop", icon: imgAdobePhotoshop },
       { name: "Illustrator", icon: imgAdobeIllustrator },
       { name: "Adobe XD", icon: imgAdobeXd },
-      { name: "Figma", icon: imgFigma },
       { name: "Sketch", icon: imgSketch },
     ],
   },
@@ -167,7 +166,10 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
         y: -8,
         transition: { duration: 0.3, ease: "easeOut" }
       }}
-      className="group backdrop-blur-md rounded-xl overflow-hidden border border-[#2a4a7c]/40 bg-gradient-to-br from-[#0a1628]/80 to-[#0e1b2d]/60 hover:border-[#5cb6ff]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#5cb6ff]/30 relative"
+      className="group backdrop-blur-md rounded-xl overflow-hidden border border-[#2a4a7c]/40 hover:border-[#5cb6ff]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#5cb6ff]/30 relative"
+      style={{
+        background: "linear-gradient(135deg, var(--color-card-gradient-start), var(--color-card-gradient-end))",
+      }}
     >
       {/* Animated gradient overlay */}
       <motion.div 
@@ -190,7 +192,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
           }}
         />
         <h3 
-          className="text-white text-center group-hover:text-[#a8d1ff] transition-colors duration-300 relative z-10"
+          className="text-[color:var(--color-text-primary)] text-center group-hover:text-[#a8d1ff] transition-colors duration-300 relative z-10"
           style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '20px', letterSpacing: '0.5px' }}
         >
           {category.title}
@@ -216,7 +218,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
                 rotate: [0, -2, 2, 0],
                 transition: { duration: 0.3 }
               }}
-              className="bg-[#0a1929]/90 border border-[#2563c7]/50 rounded-lg px-3 py-2 flex items-center gap-2 hover:border-[#5cb6ff] hover:bg-[#0d2340] transition-all duration-200 hover:shadow-md hover:shadow-[#5cb6ff]/20 cursor-default"
+              className="bg-[color:var(--color-chip-bg)] hover:bg-[color:var(--color-chip-hover)] border border-[#2563c7]/50 rounded-lg px-3 py-2 flex items-center gap-2 hover:border-[#5cb6ff] transition-all duration-200 hover:shadow-md hover:shadow-[#5cb6ff]/20 cursor-default"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}

@@ -1,6 +1,6 @@
-import svgPaths from "../imports/svg-5o6k1rhxb5";
-import imgRectangle27 from "figma:asset/97e65d1cb835b877fe73c19a7b6c5b3900144de3.png";
-import imgUnsplashOdFtpBn0SPm from "figma:asset/958ad66765db7773515d49ad8c5ec8c5c3ac1217.png";
+import svgPaths from "../data/projectSvgPaths";
+import imgRectangle27 from "../assets/97e65d1cb835b877fe73c19a7b6c5b3900144de3.png";
+import imgUnsplashOdFtpBn0SPm from "../assets/958ad66765db7773515d49ad8c5ec8c5c3ac1217.png";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
@@ -9,7 +9,8 @@ import { useLanguage } from "../contexts/LanguageContext";
 export function Projects() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [activeDot, setActiveDot] = useState(0);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isJapanese = language === "jp";
 
   const projects = [
     {
@@ -192,12 +193,15 @@ export function Projects() {
               {/* Content */}
               <div className="p-8 pb-10 relative z-20">
                 <motion.h3 
-                  className="text-[#5cb6ff] text-[40px] text-center mb-4 group-hover:text-[#6ec5ff] transition-colors" 
+                  className={`text-[#5cb6ff] text-center mb-4 group-hover:text-[#6ec5ff] transition-colors ${isJapanese ? "text-3xl md:text-[32px]" : "text-[40px]"}`} 
                   style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700 }}
                 >
                   {t("projects.qrcode.title")}
                 </motion.h3>
-                <p className="text-white text-[20px] text-center mb-4" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 300 }}>
+                <p
+                  className="text-[color:var(--color-text-primary)] text-[20px] text-center mb-4"
+                  style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300 }}
+                >
                   {t("projects.qrcode.desc")}
                 </p>
                 
@@ -259,7 +263,7 @@ export function Projects() {
                 onHoverEnd={() => setHoveredCard(null)}
               >
                 <motion.div 
-                  className="bg-[#000414] h-[111px] rounded-[20px] border-2 border-[#5cb6ff] flex items-center overflow-hidden cursor-pointer group relative"
+                  className="bg-[color:var(--color-surface)] h-[111px] rounded-[20px] border-2 border-[#5cb6ff] flex items-center overflow-hidden cursor-pointer group relative"
                   whileHover={{ 
                     x: 10,
                     boxShadow: "0px 10px 30px rgba(92, 182, 255, 0.3)"
@@ -292,15 +296,15 @@ export function Projects() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center justify-center px-4 relative z-10">
                     <motion.h3 
-                      className="text-[#5cb6ff] text-3xl md:text-[56px] text-center group-hover:text-[#6ec5ff] transition-colors" 
+                      className={`text-[#5cb6ff] text-center group-hover:text-[#6ec5ff] transition-colors ${isJapanese ? "text-2xl md:text-4xl" : "text-3xl md:text-[56px]"}`} 
                       style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 300 }}
                     >
                       {project.title}
                     </motion.h3>
                     
                     {/* Description appears on hover */}
-                    <motion.p
-                      className="text-white/70 text-center mt-1 text-sm overflow-hidden"
+                  <motion.p
+                    className="text-[color:var(--color-text-muted)] text-center mt-1 text-sm overflow-hidden"
                       initial={{ opacity: 0, height: 0 }}
                       animate={hoveredCard === index ? { 
                         opacity: 1, 

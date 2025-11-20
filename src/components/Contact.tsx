@@ -1,18 +1,18 @@
-import imgGmail from "figma:asset/509bf497099afa9d7192b9cf61f0a13160aec435.png";
-import imgInstagram from "figma:asset/67e34b1cbcffd45ecea86bc09833bdbc19ffa60a.png";
-import imgFacebook from "figma:asset/cdc12c352f169c60fcde32e82e64acc46f8e2cb7.png";
-import imgX from "figma:asset/60d95c92f7e8ee83b8f2d3ccbc77adf7c2e68b55.png";
-import imgBehance from "figma:asset/d2eb623c572df7ebd9a61eadc23985f32b4fbe47.png";
-import imgTelegram from "figma:asset/8b93f6af2c76e04330fb1f79dd6f74df5cba6788.png";
-import imgWhatsApp from "figma:asset/336e9a9a435dc4e7320d3e09f51e689cb76559a9.png";
-import imgDribbble from "figma:asset/646bc62a4f94be4b9fee8f3bb5e7e4d346bd418f.png";
+import imgGmail from "../assets/509bf497099afa9d7192b9cf61f0a13160aec435.png";
+import imgInstagram from "../assets/67e34b1cbcffd45ecea86bc09833bdbc19ffa60a.png";
+import imgFacebook from "../assets/cdc12c352f169c60fcde32e82e64acc46f8e2cb7.png";
+import imgX from "../assets/60d95c92f7e8ee83b8f2d3ccbc77adf7c2e68b55.png";
+import imgBehance from "../assets/d2eb623c572df7ebd9a61eadc23985f32b4fbe47.png";
+import imgTelegram from "../assets/8b93f6af2c76e04330fb1f79dd6f74df5cba6788.png";
+import imgWhatsApp from "../assets/336e9a9a435dc4e7320d3e09f51e689cb76559a9.png";
+import imgDribbble from "../assets/646bc62a4f94be4b9fee8f3bb5e7e4d346bd418f.png";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const socialLinks = [
-  { name: "Gmail", icon: imgGmail, url: "mailto:ahmed@example.com" },
+  { name: "Gmail", icon: imgGmail, url: "mailto:wc.ahmedo@gmail.com" },
   { name: "Instagram", icon: imgInstagram, url: "#" },
   { name: "Facebook", icon: imgFacebook, url: "#" },
   { name: "X (Twitter)", icon: imgX, url: "#" },
@@ -27,7 +27,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
@@ -166,13 +166,13 @@ export function Contact() {
               className="text-[#5cb6ff] text-xl md:text-2xl mb-2 hover:text-[#6ec5ff] transition-colors cursor-default"
               whileHover={{ x: 5 }}
             >
-              +81 (80) 1291 1533
+              080 1299 1035
             </motion.p>
             <motion.p 
               className="text-[#5cb6ff] text-xl md:text-2xl hover:text-[#6ec5ff] transition-colors cursor-default"
               whileHover={{ x: 5 }}
             >
-              ahmdfaiyaz@gmail.com
+              wc.ahmedo@gmail.com
             </motion.p>
           </motion.div>
         </motion.div>
@@ -206,7 +206,8 @@ export function Contact() {
               whileTap={{ scale: 0.95 }}
             >
               <motion.div 
-                className="bg-[#0e1b2d]/50 backdrop-blur-sm border border-[#a3a2c3] rounded-full p-3 relative overflow-hidden"
+                className="backdrop-blur-sm border border-[#a3a2c3] rounded-full p-3 relative overflow-hidden"
+                style={{ backgroundColor: "var(--color-surface-muted)" }}
                 whileHover={{ borderColor: "#5cb6ff" }}
                 transition={{ duration: 0.3 }}
               >
@@ -252,7 +253,8 @@ export function Contact() {
 
         {/* Contact Form */}
         <motion.div 
-          className="bg-[#0e1b2d]/50 backdrop-blur-sm border border-[#a3a2c3] rounded-2xl p-6 md:p-8 relative overflow-hidden"
+          className="backdrop-blur-sm border border-[#a3a2c3] rounded-2xl p-6 md:p-8 relative overflow-hidden"
+          style={{ backgroundColor: "var(--color-surface-muted)" }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -284,7 +286,7 @@ export function Contact() {
                   <input
                     type="text"
                     id="name"
-                    className="w-full bg-[#00060d] border border-[#2378ee] rounded-lg px-4 py-3 text-white focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
+                    className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
                     placeholder={t("contact.namePlaceholder")}
                     onFocus={() => setFocusedField("name")}
                     onBlur={() => setFocusedField(null)}
@@ -309,7 +311,7 @@ export function Contact() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full bg-[#00060d] border border-[#2378ee] rounded-lg px-4 py-3 text-white focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
+                    className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
                     placeholder={t("contact.emailPlaceholder")}
                     onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
@@ -335,7 +337,7 @@ export function Contact() {
                 <input
                   type="text"
                   id="subject"
-                  className="w-full bg-[#00060d] border border-[#2378ee] rounded-lg px-4 py-3 text-white focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
+                  className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
                   placeholder={t("contact.subjectPlaceholder")}
                   onFocus={() => setFocusedField("subject")}
                   onBlur={() => setFocusedField(null)}
@@ -360,7 +362,7 @@ export function Contact() {
                 <textarea
                   id="message"
                   rows={6}
-                  className="w-full bg-[#00060d] border border-[#2378ee] rounded-lg px-4 py-3 text-white focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 resize-none transition-all"
+                  className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 resize-none transition-all"
                   placeholder={t("contact.messagePlaceholder")}
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}

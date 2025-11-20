@@ -92,7 +92,7 @@ export function Hero() {
         {/* Name with split text animation */}
         <div className="mb-4 md:mb-8">
           <motion.h1
-            className="text-white text-4xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 md:mb-10 tracking-wider"
+            className="text-[color:var(--color-text-primary)] text-4xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 md:mb-10 tracking-wider"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

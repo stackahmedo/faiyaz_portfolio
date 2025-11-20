@@ -1,7 +1,7 @@
-import imgUxUiDesign from "figma:asset/58eb843da08c7370070fe534df9597e13529b089.png";
-import imgWebDev from "figma:asset/e2f3dfd3be5dca7ab43613b7ee6a6e363b5e396c.png";
-import imgBackendDev from "figma:asset/f6414cb1cb6d10c54792807cbce04b32c271639c.png";
-import imgCustomization from "figma:asset/69f9e68337143477b1f0fed8e89c4cdbd8628321.png";
+import imgUxUiDesign from "../assets/58eb843da08c7370070fe534df9597e13529b089.png";
+import imgWebDev from "../assets/e2f3dfd3be5dca7ab43613b7ee6a6e363b5e396c.png";
+import imgBackendDev from "../assets/f6414cb1cb6d10c54792807cbce04b32c271639c.png";
+import imgCustomization from "../assets/69f9e68337143477b1f0fed8e89c4cdbd8628321.png";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -166,7 +166,7 @@ export function Services() {
               onHoverEnd={() => setHoveredIndex(null)}
             >
               <motion.div
-                className="bg-[#0e1b2d] border border-white rounded-[5px] p-6 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden group cursor-pointer"
+                className="bg-[color:var(--color-surface)] border border-[color:var(--color-border-contrast)] rounded-[5px] p-6 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden group cursor-pointer"
                 style={{ 
                   boxShadow: "0px 4px 1px 0px rgba(0,0,0,0.5)" 
                 }}
@@ -250,7 +250,7 @@ export function Services() {
 
                 {/* Description (visible on hover) */}
                 <motion.p
-                  className="text-white/70 text-center mt-4 relative z-10"
+                  className="text-[color:var(--color-text-muted)] text-center mt-4 relative z-10"
                   initial={{ opacity: 0, height: 0 }}
                   animate={hoveredIndex === index ? { 
                     opacity: 1, 
@@ -306,7 +306,7 @@ export function Services() {
         >
           <motion.button 
             onClick={scrollToProjects}
-            className="border border-white bg-[#0e1b2d] text-white px-6 py-1 flex items-center gap-3 relative overflow-hidden group"
+            className="border border-[color:var(--color-border-contrast)] bg-[color:var(--color-surface)] text-[color:var(--color-text-primary)] px-6 py-1 flex items-center gap-3 relative overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -331,8 +331,13 @@ export function Services() {
                 ease: "easeInOut"
               }}
             >
-              <svg className="w-4 h-4 group-hover:fill-[#5cb6ff] transition-colors" fill="white" preserveAspectRatio="none" viewBox="0 0 16 15">
-                <path d={svgPaths.pf06e800} fill="white" className="group-hover:fill-[#5cb6ff] transition-colors" />
+              <svg
+                className="w-4 h-4 text-[color:var(--color-text-primary)] group-hover:text-[#5cb6ff] transition-colors"
+                fill="currentColor"
+                preserveAspectRatio="none"
+                viewBox="0 0 16 15"
+              >
+                <path d={svgPaths.pf06e800} fill="currentColor" className="transition-colors" />
               </svg>
             </motion.div>
 

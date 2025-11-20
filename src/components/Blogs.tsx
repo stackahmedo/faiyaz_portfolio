@@ -215,7 +215,7 @@ export function Blogs() {
 
                       {/* Title */}
                       <motion.h3 
-                        className="text-white text-2xl md:text-3xl mb-3 group-hover:text-[#5cb6ff] transition-colors line-clamp-2"
+                        className="text-[color:var(--color-text-primary)] text-2xl md:text-3xl mb-3 group-hover:text-[#5cb6ff] transition-colors line-clamp-2"
                         style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ export function Blogs() {
 
                       {/* Excerpt */}
                       <motion.p 
-                        className="text-white/80 text-sm md:text-base mb-4 line-clamp-2"
+                        className="text-[color:var(--color-text-soft)] text-sm md:text-base mb-4 line-clamp-2"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
