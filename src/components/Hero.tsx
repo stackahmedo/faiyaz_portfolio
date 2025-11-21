@@ -182,34 +182,40 @@ export function Hero() {
             ease: "easeOut",
           }}
         >
-          <motion.button
-            className="bg-[#5099ff] text-white px-6 md:px-8 py-2 md:py-3 rounded-full border border-white hover:bg-[#4088ee] transition-all flex items-center gap-2 min-w-[160px] justify-center relative overflow-hidden group"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 25px rgba(80, 153, 255, 0.5)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+          <a
+            href="https://drive.google.com/file/d/1nmbxssfXE8wV4r3yLnmgn_Hbh5ftgZ2I/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {/* Button shine effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "100%" }}
-              transition={{ duration: 0.6 }}
-            />
-            <span className="relative z-10">RESUME</span>
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
+            <motion.button
+              className="bg-[#5099ff] text-white px-6 md:px-8 py-2 md:py-3 rounded-full border border-white hover:bg-[#4088ee] transition-all flex items-center gap-2 min-w-[160px] justify-center relative overflow-hidden group"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(80, 153, 255, 0.5)",
               }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
             >
-              <Download size={20} />
-            </motion.div>
-          </motion.button>
+              {/* Button shine effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
+                transition={{ duration: 0.6 }}
+              />
+              <span className="relative z-10">{t("hero.resume")}</span>
+              <motion.div
+                animate={{ y: [0, -3, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Download size={20} />
+              </motion.div>
+            </motion.button>
+          </a>
 
           <motion.button
             onClick={scrollToContact}

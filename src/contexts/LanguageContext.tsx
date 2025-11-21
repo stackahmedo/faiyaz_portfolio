@@ -12,6 +12,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    // Page Title
+    'page.title': 'Ahmed Faiyaz | Portfolio',
+
     // Navigation
     'nav.home': 'Home',
     'nav.about': 'About Me',
@@ -28,6 +31,7 @@ const translations = {
     'hero.title': 'Full Stack Developer',
     'hero.description': 'Tokyo-based developer crafting warm, fast web experiences for real people. I obsess over the details that make a product feel alive.',
     'hero.cta': 'Say Hello',
+    'hero.resume': 'Resume',
     
     // About
     'about.title': 'About Me',
@@ -136,6 +140,9 @@ const translations = {
     'footer.in': 'in Tokyo',
   },
   jp: {
+    // Page Title
+    'page.title': 'アーメド・ファイヤーズ｜ポートフォリオ',
+    
     // Navigation
     'nav.home': 'ホーム',
     'nav.about': '私について',
@@ -152,6 +159,7 @@ const translations = {
     'hero.title': 'フルスタック開発者',
     'hero.description': '東京を拠点に、人の温度を感じる高速なウェブ体験をつくっています。細部までこだわり、画面に息づかいを与えるのが得意です。',
     'hero.cta': '気軽に相談する',
+    'hero.resume': '履歴書',
     
     // About
     'about.title': '私について',
@@ -262,7 +270,7 @@ const translations = {
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('jp');
 
   // Load language from localStorage on mount
   useEffect(() => {
