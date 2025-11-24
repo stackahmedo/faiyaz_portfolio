@@ -38,6 +38,7 @@ import { ReactNode } from "react";
 import { motion } from "motion/react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { 
+  FigmaIcon,
   FirestoreIcon, 
   GitHubPagesIcon, 
   NetlifyIcon, 
@@ -45,7 +46,7 @@ import {
   JSONIcon,
   GitLabIcon,
   HostingerIcon,
-  ZoomIcon
+  ZoomIcon,
 } from "./SkillIcons";
 
 interface Skill {
@@ -63,6 +64,7 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Designing Tools",
     skills: [
+      { name: "Figma", iconComponent: <FigmaIcon /> },
       { name: "PhotoShop", icon: imgAdobePhotoshop },
       { name: "Illustrator", icon: imgAdobeIllustrator },
       { name: "Adobe XD", icon: imgAdobeXd },
