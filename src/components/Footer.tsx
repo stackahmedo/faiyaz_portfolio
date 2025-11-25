@@ -7,6 +7,7 @@ import imgBehance from "../assets/d2eb623c572df7ebd9a61eadc23985f32b4fbe47.png";
 import imgTelegram from "../assets/8b93f6af2c76e04330fb1f79dd6f74df5cba6788.png";
 import imgWhatsApp from "../assets/336e9a9a435dc4e7320d3e09f51e689cb76559a9.png";
 import imgDribbble from "../assets/646bc62a4f94be4b9fee8f3bb5e7e4d346bd418f.png";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const socialLinks = [
   { name: "Gmail", icon: imgGmail, url: "mailto:wc.ahmedo@gmail.com" },
@@ -20,7 +21,12 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+  const copyrightText = t("footer.copyright").replace(
+    "{year}",
+    String(currentYear)
+  );
 
   return (
     <footer className="bg-[color:var(--color-bg-primary)] border-t border-[#1057bc] py-12 md:py-16 px-4">
@@ -34,14 +40,14 @@ export function Footer() {
               className="w-24 h-24 md:w-32 md:h-32 object-contain mb-4"
             />
             <p className="text-[#5cb6ff] text-center md:text-left">
-              Web Developer & Designer
+              {t("footer.role")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="text-center">
             <h3 className="text-[#5cb6ff] text-xl md:text-2xl mb-4">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-2">
               <li>
@@ -49,7 +55,7 @@ export function Footer() {
                   href="#hero"
                   className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
                 >
-                  Home
+                  {t("nav.home")}
                 </a>
               </li>
               <li>
@@ -57,7 +63,7 @@ export function Footer() {
                   href="#about"
                   className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
                 >
-                  About
+                  {t("nav.about")}
                 </a>
               </li>
               <li>
@@ -65,7 +71,7 @@ export function Footer() {
                   href="#skills"
                   className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
                 >
-                  Skills
+                  {t("nav.skills")}
                 </a>
               </li>
               <li>
@@ -73,7 +79,7 @@ export function Footer() {
                   href="#projects"
                   className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
                 >
-                  Projects
+                  {t("nav.projects")}
                 </a>
               </li>
               <li>
@@ -81,7 +87,7 @@ export function Footer() {
                   href="#contact"
                   className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
                 >
-                  Contact
+                  {t("nav.contact")}
                 </a>
               </li>
             </ul>
@@ -90,12 +96,12 @@ export function Footer() {
           {/* Contact Info */}
           <div className="text-center md:text-right">
             <h3 className="text-[#5cb6ff] text-xl md:text-2xl mb-4">
-              Contact
+              {t("footer.contact")}
             </h3>
             <div className="space-y-2 text-[color:var(--color-footer-link)]">
-              <p>Tokyo, Japan</p>
-              <p>080 1299 1035</p>
-              <p>wc.ahmedo@gmail.com</p>
+              <p>{t("footer.location")}</p>
+              <p>{t("footer.phone")}</p>
+              <p>{t("footer.email")}</p>
             </div>
           </div>
         </div>
@@ -123,7 +129,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center mt-8 md:mt-12 pt-8 border-t border-[#1057bc]">
           <p className="text-[#5cb6ff]">
-            © {currentYear} Ahmed Faiyaz. All rights reserved.
+            {copyrightText}
           </p>
         </div>
       </div>

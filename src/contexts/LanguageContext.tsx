@@ -131,6 +131,12 @@ const translations = {
     'contact.messageSent': 'Message Sent!',
     
     // Footer
+    'footer.role': 'Full Stack Developer & Designer',
+    'footer.contact': 'Contact',
+    'footer.location': 'Tokyo, Japan',
+    'footer.phone': '080 1299 1035',
+    'footer.email': 'wc.ahmedo@gmail.com',
+    'footer.copyright': '© {year} Ahmed Faiyaz. All rights reserved.',
     'footer.tagline': 'Full Stack Developer & Designer',
     'footer.description': "Crafting thoughtful digital experiences from Tokyo. If something here sparks an idea, let's chat.",
     'footer.quickLinks': 'Quick Links',
@@ -259,6 +265,12 @@ const translations = {
     'contact.messageSent': '送信完了！',
     
     // Footer
+    'footer.role': 'フルスタック開発者＆デザイナー',
+    'footer.contact': 'お問い合わせ',
+    'footer.location': '東京, 日本',
+    'footer.phone': '080 1299 1035',
+    'footer.email': 'wc.ahmedo@gmail.com',
+    'footer.copyright': '© {year} Ahmed Faiyaz. 無断転載禁止。',
     'footer.tagline': 'フルスタック開発者＆デザイナー',
     'footer.description': '東京から丁寧なデジタル体験をお届けしています。気になることがあれば、いつでもご連絡ください。',
     'footer.quickLinks': 'クイックリンク',
