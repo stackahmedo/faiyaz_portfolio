@@ -1,0 +1,160 @@
+export const en = {
+  // Page Title
+  'page.title': 'Ahmed Faiyaz | Portfolio',
+
+  // Navigation
+  'nav.home': 'Home',
+  'nav.about': 'About Me',
+  'nav.skills': 'Skills',
+  'nav.services': 'Services',
+  'nav.projects': 'Projects',
+  'nav.blogs': 'Blogs',
+  'nav.contact': 'Contact',
+  'nav.menu': 'Toggle menu',
+  'nav.skip': 'Skip to content',
+
+  // Hero
+  'hero.greeting': 'Hi!',
+  'hero.intro': "I'm",
+  'hero.name': 'AHMED FAIYAZ',
+  'hero.title': 'Full Stack Developer',
+  'hero.description': 'Tokyo-based developer crafting warm, fast web experiences for real people. I obsess over the details that make a product feel alive.',
+  'hero.cta': 'Say Hello',
+  'hero.resume': 'Resume',
+  'hero.location': 'Based in Tokyo',
+
+  // About
+  'about.title': 'About Me',
+  'about.headline': 'Human stories translated into useful interfaces',
+  'about.intro': "I'm Ahmed Faiyaz, a Bangladeshi-born developer now rooted in Tokyo. I blend product thinking, design sensitivity, and reliable engineering to turn messy ideas into calm digital spaces.",
+  'about.journey': 'Years of freelancing and agency work taught me to listen first, prototype fast, and deliver code that teams can trust long after launch.',
+  'about.passion': "When I'm not coding, I'm walking Tokyo with my camera—collecting quiet details like light on concrete or strangers laughing. That habit shapes how I think about UI rhythms and micro-interactions.",
+  'about.philosophy': "Software should feel considerate. Whether it's a portfolio, internal tool, or launch site, I work closely with clients to understand the real problem before opening my editor.",
+  'about.cta': "Let's build something honest together.",
+  'about.tagline': 'Passionate • Creative • Innovative',
+
+  // Skills
+  'skills.title': 'Skills & Technologies',
+  'skills.subtitle': 'A comprehensive overview of my technical expertise and tools I work with',
+  'skills.frontend': 'Frontend Development',
+  'skills.backend': 'Backend Development',
+  'skills.tools': 'Tools & Platforms',
+  'skills.design': 'Design & Creative',
+  'skills.closing': 'Continuously learning and expanding my skillset',
+  'skills.cat.design': 'Design Tools',
+  'skills.cat.frontend': 'Frontend',
+  'skills.cat.backend': 'Backend',
+  'skills.cat.cloud': 'Cloud & Deployment',
+  'skills.cat.database': 'Database',
+  'skills.cat.ai': 'APIs & AI Integration',
+  'skills.cat.vcs': 'Version Control & Tooling',
+  'skills.cat.cms': 'CMS',
+  'skills.cat.collab': 'Collaboration',
+
+  // Services
+  'services.title': 'Services',
+  'services.uiux.title': 'UI/UX Design',
+  'services.uiux.desc': 'From workshops to clickable prototypes, I map journeys and craft calm interfaces that feel familiar on day one.',
+  'services.webdev.title': 'Web Development',
+  'services.webdev.desc': 'Clean, reusable components with progressive enhancement so your site stays fast on any device.',
+  'services.backend.title': 'Backend Development',
+  'services.backend.desc': 'Reliable APIs and background jobs built with TypeScript/Node or Python, always documented for handoff.',
+  'services.customization.title': 'Product Support',
+  'services.customization.desc': 'Need tweaks on an existing site? I jump into legacy code, tidy things up, and leave notes so your team can keep moving.',
+  'services.mobile.title': 'Mobile Development',
+  'services.mobile.desc': 'React Native / Expo apps with a shared design language, tuned for both major platforms.',
+  'services.ecommerce.title': 'E-Commerce Solutions',
+  'services.ecommerce.desc': 'Conversion-focused storefronts with thoughtful product storytelling, secure checkout, and understandable analytics.',
+  'services.api.title': 'API Development',
+  'services.api.desc': 'REST or GraphQL endpoints with monitoring hooks so you know about issues before your customers do.',
+  'services.consulting.title': 'Technical Consulting',
+  'services.consulting.desc': 'Honest guidance on stack choices, shipping strategy, and how to grow an efficient product team.',
+  'services.subtitle': 'How I can help your team ship',
+  'services.seeWork': 'See my work',
+
+  // Projects
+  'projects.title': 'Projects',
+  'projects.viewProject': 'View Project',
+  'projects.liveDemo': 'Live Demo',
+  'projects.sourceCode': 'Source Code',
+
+  'projects.qrcode.title': 'QR Code',
+  'projects.qrcode.desc': 'Playful QR generator for pop-up events so teams can share menus in seconds.',
+  'projects.qrcode.tags': 'React, TypeScript, QR Library',
+
+  'projects.travelsite.title': 'Travel Site',
+  'projects.travelsite.desc': 'Weekend inspiration site pairing curated journeys with local tips.',
+  'projects.travelsite.tags': 'React, Tailwind, API',
+
+  'projects.groupware.title': 'Groupware',
+  'projects.groupware.desc': 'Lightweight team hub that keeps async updates tidy for distributed crews.',
+  'projects.groupware.tags': 'Next.js, TypeScript, Supabase',
+
+  'projects.schoolhub.title': 'School HUB',
+  'projects.schoolhub.desc': 'School dashboard keeping teachers, parents, and students on the same page.',
+  'projects.schoolhub.tags': 'React, Node.js, MongoDB',
+
+  'projects.portfolio.title': 'Portfolio',
+  'projects.portfolio.desc': 'Living portfolio focused on motion, storytelling, and accessibility.',
+  'projects.portfolio.tags': 'React, Motion, カスタムUI',
+  'projects.subtitle': 'Selected work — pick a project to take a closer look',
+  'projects.featured': 'Featured',
+
+  // Blogs
+  'blogs.title': 'Blogs',
+  'blogs.scrollMore': 'Scroll More',
+
+  'blogs.post1.title': 'Building Modern Web Applications with React & TypeScript',
+  'blogs.post1.excerpt': 'Explore best practices for creating scalable, type-safe web applications using the latest React features and TypeScript.',
+  'blogs.post1.date': 'Nov 15, 2024',
+  'blogs.post1.readTime': '8 min read',
+  'blogs.post1.category': 'Development',
+
+  'blogs.post2.title': 'The Art of UI/UX Design: Creating Intuitive Interfaces',
+  'blogs.post2.excerpt': 'Learn how to design user experiences that delight users and drive engagement through thoughtful interface design.',
+  'blogs.post2.date': 'Nov 10, 2024',
+  'blogs.post2.readTime': '6 min read',
+  'blogs.post2.category': 'Design',
+
+  'blogs.post3.title': 'Photography Tips: Capturing Life in Tokyo',
+  'blogs.post3.excerpt': 'Discover the hidden gems of Tokyo through my lens and learn techniques for urban photography.',
+  'blogs.post3.date': 'Nov 5, 2024',
+  'blogs.post3.readTime': '5 min read',
+  'blogs.post3.category': 'Photography',
+  'blogs.subtitle': 'Notes on code, design and life in Tokyo',
+  'blogs.prev': 'Previous post',
+  'blogs.next': 'Next post',
+
+  // Contact
+  'contact.title': 'Contact',
+  'contact.name': 'Name',
+  'contact.namePlaceholder': 'Your name',
+  'contact.email': 'Email',
+  'contact.emailPlaceholder': 'your.email@example.com',
+  'contact.subject': 'Subject',
+  'contact.subjectPlaceholder': 'Subject',
+  'contact.message': 'Message',
+  'contact.messagePlaceholder': 'Your message...',
+  'contact.sendButton': 'Send Message',
+  'contact.subtitle': 'Have a project in mind or just want to say hi? My inbox is open.',
+  'contact.opening': 'Opening your email app…',
+  'contact.formNote': 'Sending opens your email app with the message pre-filled.',
+
+  // Footer
+  'footer.role': 'Full Stack Developer & Designer',
+  'footer.contact': 'Contact',
+  'footer.location': 'Tokyo, Japan',
+  'footer.phone': '080 1299 1035',
+  'footer.email': 'wc.ahmedo@gmail.com',
+  'footer.copyright': '© {year} Ahmed Faiyaz. All rights reserved.',
+  'footer.tagline': 'Full Stack Developer & Designer',
+  'footer.description': "Crafting thoughtful digital experiences from Tokyo. If something here sparks an idea, let's chat.",
+  'footer.quickLinks': 'Quick Links',
+  'footer.connect': 'Connect',
+  'footer.rights': 'All rights reserved.',
+  'footer.madeWith': 'Made with',
+  'footer.in': 'in Tokyo',
+  'footer.backToTop': 'Back to top',
+} as const;
+
+export type TranslationKey = keyof typeof en;

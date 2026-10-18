@@ -1,136 +1,90 @@
+import { ArrowUp } from "lucide-react";
 import imgLogo from "../assets/personal-logo.svg";
-import imgGmail from "../assets/509bf497099afa9d7192b9cf61f0a13160aec435.png";
-import imgInstagram from "../assets/67e34b1cbcffd45ecea86bc09833bdbc19ffa60a.png";
-import imgFacebook from "../assets/cdc12c352f169c60fcde32e82e64acc46f8e2cb7.png";
-import imgX from "../assets/60d95c92f7e8ee83b8f2d3ccbc77adf7c2e68b55.png";
-import imgBehance from "../assets/d2eb623c572df7ebd9a61eadc23985f32b4fbe47.png";
-import imgTelegram from "../assets/8b93f6af2c76e04330fb1f79dd6f74df5cba6788.png";
-import imgWhatsApp from "../assets/336e9a9a435dc4e7320d3e09f51e689cb76559a9.png";
-import imgDribbble from "../assets/646bc62a4f94be4b9fee8f3bb5e7e4d346bd418f.png";
 import { useLanguage } from "../contexts/LanguageContext";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF, activeSocialLinks } from "../data/contact";
+import { navItems } from "../data/navigation";
 
-const socialLinks = [
-  { name: "Gmail", icon: imgGmail, url: "mailto:wc.ahmedo@gmail.com" },
-  { name: "Instagram", icon: imgInstagram, url: "#" },
-  { name: "Facebook", icon: imgFacebook, url: "#" },
-  { name: "X", icon: imgX, url: "#" },
-  { name: "Behance", icon: imgBehance, url: "#" },
-  { name: "Telegram", icon: imgTelegram, url: "#" },
-  { name: "WhatsApp", icon: imgWhatsApp, url: "#" },
-  { name: "Dribbble", icon: imgDribbble, url: "#" },
-];
+// Email is listed under Contact, so the icon row only shows other profiles.
+const profiles = activeSocialLinks.filter((link) => !link.url.startsWith("mailto:"));
+
+const linkClass = "text-footer-link transition-colors hover:text-accent";
 
 export function Footer() {
   const { t } = useLanguage();
-  const currentYear = new Date().getFullYear();
-  const copyrightText = t("footer.copyright").replace(
-    "{year}",
-    String(currentYear)
-  );
+  const copyrightText = t("footer.copyright").replace("{year}", String(new Date().getFullYear()));
 
   return (
-    <footer className="bg-[color:var(--color-bg-primary)] border-t border-[#1057bc] py-12 md:py-16 px-4">
+    <footer className="border-t border-brand-deep bg-ink px-4 py-12 md:py-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
           {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start">
-            <img
-              src={imgLogo}
-              alt="Ahmed Faiyaz Logo"
-              className="w-24 h-24 md:w-32 md:h-32 object-contain mb-4"
-            />
-            <p className="text-[#5cb6ff] text-center md:text-left">
-              {t("footer.role")}
-            </p>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <img src={imgLogo} alt="Ahmed Faiyaz" className="mb-4 h-20 w-20 object-contain md:h-24 md:w-24" />
+            <p className="mb-2 text-lg text-accent">{t("footer.role")}</p>
+            <p className="max-w-xs text-sm text-fg-muted">{t("footer.description")}</p>
           </div>
 
           {/* Quick Links */}
-          <div className="text-center">
-            <h3 className="text-[#5cb6ff] text-xl md:text-2xl mb-4">
+          <nav className="text-center" aria-labelledby="footer-links">
+            <h2 id="footer-links" className="mb-4 text-xl text-accent md:text-2xl">
               {t("footer.quickLinks")}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#hero"
-                  className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
-                >
-                  {t("nav.home")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
-                >
-                  {t("nav.about")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
-                >
-                  {t("nav.skills")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
-                >
-                  {t("nav.projects")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-[color:var(--color-footer-link)] hover:text-[#5cb6ff] transition-colors"
-                >
-                  {t("nav.contact")}
-                </a>
-              </li>
+            </h2>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:inline-grid">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a href={`#${item.id}`} className={linkClass}>
+                    {t(item.labelKey)}
+                  </a>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact Info */}
           <div className="text-center md:text-right">
-            <h3 className="text-[#5cb6ff] text-xl md:text-2xl mb-4">
-              {t("footer.contact")}
-            </h3>
-            <div className="space-y-2 text-[color:var(--color-footer-link)]">
-              <p>{t("footer.location")}</p>
-              <p>{t("footer.phone")}</p>
-              <p>{t("footer.email")}</p>
-            </div>
+            <h2 className="mb-4 text-xl text-accent md:text-2xl">{t("footer.contact")}</h2>
+            <address className="space-y-2 not-italic">
+              <p className="text-footer-link">{t("footer.location")}</p>
+              <p>
+                <a href={CONTACT_PHONE_HREF} className={linkClass}>
+                  {CONTACT_PHONE}
+                </a>
+              </p>
+              <p>
+                <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+                  {CONTACT_EMAIL}
+                </a>
+              </p>
+            </address>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex flex-wrap justify-center gap-4 mt-8 md:mt-12">
-          {socialLinks.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-              aria-label={social.name}
-            >
-              <img
-                src={social.icon}
-                alt={social.name}
-                className="w-8 h-8 object-contain hover:scale-110 transition-transform"
-              />
-            </a>
-          ))}
-        </div>
+        {profiles.length > 0 && (
+          <ul className="mt-10 flex flex-wrap justify-center gap-4 md:mt-12">
+            {profiles.map((social) => (
+              <li key={social.name}>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  title={social.name}
+                  className="block transition-transform hover:scale-110"
+                >
+                  <img src={social.icon} alt="" className="h-8 w-8 object-contain" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
 
         {/* Copyright */}
-        <div className="text-center mt-8 md:mt-12 pt-8 border-t border-[#1057bc]">
-          <p className="text-[#5cb6ff]">
-            {copyrightText}
-          </p>
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-brand-deep pt-8 sm:flex-row md:mt-12">
+          <p className="text-accent">{copyrightText}</p>
+          <a href="#hero" className="group inline-flex items-center gap-2 text-sm text-accent/80 hover:text-accent">
+            {t("footer.backToTop")}
+            <ArrowUp size={16} className="transition-transform group-hover:-translate-y-0.5" />
+          </a>
         </div>
       </div>
     </footer>

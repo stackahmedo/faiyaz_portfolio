@@ -1,0 +1,160 @@
+import type { TranslationKey } from "./en";
+
+export const jp: Record<TranslationKey, string> = {
+  // Page Title
+  'page.title': 'アーメド・ファイヤーズ｜ポートフォリオ',
+
+  // Navigation
+  'nav.home': 'ホーム',
+  'nav.about': '私について',
+  'nav.skills': 'スキル',
+  'nav.services': 'サービス',
+  'nav.projects': 'プロジェクト',
+  'nav.blogs': 'ブログ',
+  'nav.contact': 'お問い合わせ',
+  'nav.menu': 'メニューを開閉',
+  'nav.skip': 'コンテンツへスキップ',
+
+  // Hero
+  'hero.greeting': 'こんにちは！',
+  'hero.intro': '私は',
+  'hero.name': 'アーメド  ファイヤーズ',
+  'hero.title': 'フルスタック開発者',
+  'hero.description': '東京を拠点に、人の温度を感じる高速なウェブ体験をつくっています。細部までこだわり、画面に息づかいを与えるのが得意です。',
+  'hero.cta': '気軽に相談する',
+  'hero.resume': '履歴書',
+  'hero.location': '東京を拠点に活動',
+
+  // About
+  'about.title': '私について',
+  'about.headline': '人の物語を役立つインターフェースへ落とし込む',
+  'about.intro': 'バングラデシュ出身で東京在住の開発者、アーメド・ファイヤーズです。プロダクト視点とデザイン感覚、そして堅実なエンジニアリングを掛け合わせ、曖昧なアイデアを落ち着いたデジタル体験へ育てています。',
+  'about.journey': '学生時代の小さな開発から、フリーランスや制作会社での案件まで。耳を傾け、すばやく試作し、リリース後も安心して使えるコードを届ける方法を学びました。',
+  'about.passion': '気分転換はカメラを持って東京を歩くこと。コンクリートに落ちる光やふとした笑い声など、ささやかな瞬間を切り取る時間が、UIのリズムやマイクロインタラクションへの気づきにつながっています。',
+  'about.philosophy': 'ソフトウェアは思いやりを感じさせる存在であるべきだと考えています。ポートフォリオから社内ツール、ローンチサイトまで、コーディングを始める前に課題の本質をチームと一緒に深掘りします。',
+  'about.cta': '一緒にまっすぐなプロダクトを作りましょう。',
+  'about.tagline': '情熱 • 創造 • 革新',
+
+  // Skills
+  'skills.title': 'スキル & 技術',
+  'skills.subtitle': '私の技術的な専門知識と使用するツールの総覧',
+  'skills.frontend': 'フロントエンド開発',
+  'skills.backend': 'バックエンド開発',
+  'skills.tools': 'ツールとプラットフォーム',
+  'skills.design': 'デザインとクリエイティブ',
+  'skills.closing': '常に学び、スキルを広げ続けています',
+  'skills.cat.design': 'デザインツール',
+  'skills.cat.frontend': 'フロントエンド',
+  'skills.cat.backend': 'バックエンド',
+  'skills.cat.cloud': 'クラウド & デプロイ',
+  'skills.cat.database': 'データベース',
+  'skills.cat.ai': 'API & AI 連携',
+  'skills.cat.vcs': 'バージョン管理 & ツール',
+  'skills.cat.cms': 'CMS',
+  'skills.cat.collab': 'コラボレーション',
+
+  // Services
+  'services.title': 'サービス',
+  'services.uiux.title': 'UI/UXデザイン',
+  'services.uiux.desc': 'ワークショップからプロトタイプまで、ユーザージャーニーを整理し、初日から馴染む落ち着いたUIを描きます。',
+  'services.webdev.title': 'ウェブ開発',
+  'services.webdev.desc': 'どのデバイスでも速く動くよう、再利用しやすいコンポーネントとプログレッシブエンハンスメントを徹底します。',
+  'services.backend.title': 'バックエンド開発',
+  'services.backend.desc': 'TypeScript/NodeやPythonで堅実なAPIやバッチ処理を構築し、引き継ぎ用のドキュメントも忘れません。',
+  'services.customization.title': 'プロダクトサポート',
+  'services.customization.desc': '既存サイトの微調整や保守も歓迎。レガシーコードを整え、チームが続きの作業をしやすいようメモを残します。',
+  'services.mobile.title': 'モバイル開発',
+  'services.mobile.desc': 'React NativeやExpoを使い、プラットフォームをまたいでも統一感のあるアプリを制作します。',
+  'services.ecommerce.title': 'Eコマースソリューション',
+  'services.ecommerce.desc': '商品ストーリーを伝えるコンテンツ、安心できる決済、読みやすい分析環境をセットで提供します。',
+  'services.api.title': 'API開発',
+  'services.api.desc': 'REST / GraphQL問わず、モニタリングまで含めたAPIを構築し、障害をユーザーより先に検知できるようにします。',
+  'services.consulting.title': '技術コンサルティング',
+  'services.consulting.desc': '技術選定や採用計画、ローンチ戦略まで、現場目線のアドバイスをお届けします。',
+  'services.subtitle': 'チームのプロダクトづくりをこう支えます',
+  'services.seeWork': '制作実績を見る',
+
+  // Projects
+  'projects.title': 'プロジェクト',
+  'projects.viewProject': 'プロジェクトを見る',
+  'projects.liveDemo': 'ライブデモ',
+  'projects.sourceCode': 'ソースコード',
+
+  'projects.qrcode.title': 'QRコード',
+  'projects.qrcode.desc': 'ポップアップイベント向けに作ったQRジェネレーター。リンクをすぐ共有できます。',
+  'projects.qrcode.tags': 'React, TypeScript, QRライブラリ',
+
+  'projects.travelsite.title': 'トラベルサイト',
+  'projects.travelsite.desc': '週末旅のアイデアとローカル情報をまとめたインスピレーションサイト。',
+  'projects.travelsite.tags': 'React, Tailwind, API',
+
+  'projects.groupware.title': 'グループウェア',
+  'projects.groupware.desc': '分散チームの非同期コミュニケーションを整える軽量グループウェア。',
+  'projects.groupware.tags': 'Next.js, TypeScript, Supabase',
+
+  'projects.schoolhub.title': 'スクールHUB',
+  'projects.schoolhub.desc': '先生・保護者・生徒が同じ画面で状況を共有できる学校ダッシュボード。',
+  'projects.schoolhub.tags': 'React, Node.js, MongoDB',
+
+  'projects.portfolio.title': 'ポートフォリオ',
+  'projects.portfolio.desc': 'モーションとストーリーテリングにこだわった現在進行形のポートフォリオ。',
+  'projects.portfolio.tags': 'React, Motion, Custom UI',
+  'projects.subtitle': '主な制作実績 — 選択すると詳細を表示します',
+  'projects.featured': '注目',
+
+  // Blogs
+  'blogs.title': 'ブログ',
+  'blogs.scrollMore': 'もっと',
+
+  'blogs.post1.title': 'ReactとTypeScriptで最新のWebアプリケーションを構築する',
+  'blogs.post1.excerpt': '最新のReact機能とTypeScriptを使用して、スケーラブルで型安全なWebアプリケーションを作成するためのベストプラクティスを探ります。',
+  'blogs.post1.date': 'Nov 15, 2024',
+  'blogs.post1.readTime': '8 min read',
+  'blogs.post1.category': '開発',
+
+  'blogs.post2.title': 'UI/UXデザインの芸術：直感的なインターフェイスの作成',
+  'blogs.post2.excerpt': '思慮深いインターフェイスデザインを通じて、ユーザーを喜ばせ、エンゲージメントを促進するユーザー体験を設計する方法を学びます。',
+  'blogs.post2.date': 'Nov 10, 2024',
+  'blogs.post2.readTime': '6 min read',
+  'blogs.post2.category': 'デザイン',
+
+  'blogs.post3.title': '写真のヒント：東京の生活を捉える',
+  'blogs.post3.excerpt': '私のレンズを通して東京の隠れた宝石を発見し、都市写真のテクニックを学びます。',
+  'blogs.post3.date': 'Nov 5, 2024',
+  'blogs.post3.readTime': '5 min read',
+  'blogs.post3.category': '写真',
+  'blogs.subtitle': 'コード、デザイン、東京での暮らしについて',
+  'blogs.prev': '前の記事',
+  'blogs.next': '次の記事',
+
+  // Contact
+  'contact.title': 'お問い合わせ',
+  'contact.name': '名前',
+  'contact.namePlaceholder': 'お名前',
+  'contact.email': 'メールアドレス',
+  'contact.emailPlaceholder': 'your.email@example.com',
+  'contact.subject': '件名',
+  'contact.subjectPlaceholder': '件名',
+  'contact.message': 'メッセージ',
+  'contact.messagePlaceholder': 'メッセージをご記入ください...',
+  'contact.sendButton': '送信する',
+  'contact.subtitle': 'ご相談やご質問など、お気軽にご連絡ください。',
+  'contact.opening': 'メールアプリを開いています…',
+  'contact.formNote': '送信するとメールアプリが開き、内容が自動入力されます。',
+
+  // Footer
+  'footer.role': 'フルスタック開発者＆デザイナー',
+  'footer.contact': 'お問い合わせ',
+  'footer.location': '東京, 日本',
+  'footer.phone': '080 1299 1035',
+  'footer.email': 'wc.ahmedo@gmail.com',
+  'footer.copyright': '© {year} Ahmed Faiyaz. 無断転載禁止。',
+  'footer.tagline': 'フルスタック開発者＆デザイナー',
+  'footer.description': '東京から丁寧なデジタル体験をお届けしています。気になることがあれば、いつでもご連絡ください。',
+  'footer.quickLinks': 'クイックリンク',
+  'footer.connect': '繋がる',
+  'footer.rights': '無断転載禁止。',
+  'footer.madeWith': '❤️を込めて',
+  'footer.in': '東京にて制作',
+  'footer.backToTop': 'トップへ戻る',
+};
