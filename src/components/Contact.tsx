@@ -1,445 +1,185 @@
-import imgGmail from "../assets/509bf497099afa9d7192b9cf61f0a13160aec435.png";
-import imgInstagram from "../assets/67e34b1cbcffd45ecea86bc09833bdbc19ffa60a.png";
-import imgFacebook from "../assets/cdc12c352f169c60fcde32e82e64acc46f8e2cb7.png";
-import imgX from "../assets/60d95c92f7e8ee83b8f2d3ccbc77adf7c2e68b55.png";
-import imgBehance from "../assets/d2eb623c572df7ebd9a61eadc23985f32b4fbe47.png";
-import imgTelegram from "../assets/8b93f6af2c76e04330fb1f79dd6f74df5cba6788.png";
-import imgWhatsApp from "../assets/336e9a9a435dc4e7320d3e09f51e689cb76559a9.png";
-import imgDribbble from "../assets/646bc62a4f94be4b9fee8f3bb5e7e4d346bd418f.png";
 import { motion } from "motion/react";
-import { useState, FormEvent } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { Send, Mail, Phone } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF, activeSocialLinks } from "../data/contact";
+import { SectionBackground } from "./ui/SectionBackground";
+import { SectionHeading } from "./ui/SectionHeading";
 
-const socialLinks = [
-  { name: "Gmail", icon: imgGmail, url: "mailto:wc.ahmedo@gmail.com" },
-  { name: "Instagram", icon: imgInstagram, url: "#" },
-  { name: "Facebook", icon: imgFacebook, url: "#" },
-  { name: "X (Twitter)", icon: imgX, url: "#" },
-  { name: "Behance", icon: imgBehance, url: "#" },
-  { name: "Telegram", icon: imgTelegram, url: "#" },
-  { name: "WhatsApp", icon: imgWhatsApp, url: "#" },
-  { name: "Dribbble", icon: imgDribbble, url: "#" },
-];
+const inputClass =
+  "w-full rounded-lg border border-[#2378ee] bg-input px-4 py-3 text-fg placeholder:text-fg-muted/50 transition-all focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none";
+
+// Email is already shown above the form, so only list the other profiles here.
+const profiles = activeSocialLinks.filter((link) => !link.url.startsWith("mailto:"));
 
 export function Contact() {
-  const [focusedField, setFocusedField] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const { t } = useLanguage();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const field = (name: string) => String(data.get(name) ?? "").trim();
+
+    const body = `${field("message")}\n\n— ${field("name")} <${field("email")}>`;
+    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(field("subject"))}&body=${encodeURIComponent(body)}`;
+
+    setSending(true);
+    window.location.href = href;
+    window.setTimeout(() => setSending(false), 3000);
   };
 
   return (
-    <section id="contact" className="min-h-screen px-4 py-16 md:py-20 relative overflow-hidden">
-      {/* Animated background effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `radial-gradient(circle, #5cb6ff 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
-        
-        {/* Floating orbs */}
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#5cb6ff]/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 40, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-[#4373b5]/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, -50, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 26,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="relative min-h-screen overflow-hidden px-4 py-20 md:py-24"
+    >
+      <SectionBackground
+        pattern="dots"
+        particles={10}
+        seed={77}
+        orbs={[
+          { className: "top-1/4 left-1/4 h-[400px] w-[400px] bg-accent/5", duration: 22, drift: [40, -50] },
+          { className: "right-1/4 bottom-1/4 h-[450px] w-[450px] bg-steel/5", duration: 26, drift: [-50, 40] },
+        ]}
+      />
 
-        {/* Floating particles */}
-        {[...Array(18)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1.5 h-1.5 bg-[#5cb6ff]/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -50, 0],
-              opacity: [0.2, 0.6, 0.2],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+      <div className="relative z-10 container mx-auto max-w-5xl">
+        <SectionHeading id="contact-title" title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
-      <div className="container mx-auto max-w-5xl relative z-10">
-        {/* Title Section */}
-        <motion.div 
-          className="text-center mb-8 md:mb-12"
-          initial={{ opacity: 0, y: -50 }}
+        {/* Direct contact */}
+        <motion.div
+          className="mb-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <motion.h2 
-            className="text-[#5cb6ff] text-4xl md:text-5xl lg:text-6xl mb-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {t("contact.title")}
-          </motion.h2>
-          
-          {/* Animated underline */}
-          <motion.div 
-            className="w-72 h-1 bg-gradient-to-r from-[#5cb6ff]/30 via-[#5cb6ff] to-[#5cb6ff]/30 mx-auto rounded-full relative overflow-hidden"
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: 288, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
-              animate={{ x: ["-100%", "200%"] }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "linear",
-                repeatDelay: 1
-              }}
-            />
-          </motion.div>
+          {[
+            { href: `mailto:${CONTACT_EMAIL}`, label: CONTACT_EMAIL, Icon: Mail },
+            { href: CONTACT_PHONE_HREF, label: CONTACT_PHONE, Icon: Phone },
+          ].map(({ href, label, Icon }) => (
+            <a
+              key={href}
+              href={href}
+              className="group inline-flex items-center gap-3 rounded-full border border-accent/30 bg-surface-muted px-5 py-3 text-lg text-accent backdrop-blur-sm transition-colors hover:border-accent hover:text-accent-bright md:text-xl"
+            >
+              <Icon size={20} className="transition-transform group-hover:-rotate-12" aria-hidden="true" />
+              {label}
+            </a>
+          ))}
         </motion.div>
 
-        {/* Contact Info */}
-        <motion.div 
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 30 }}
+        {profiles.length > 0 && (
+          <ul className="mb-12 flex flex-wrap justify-center gap-4 md:gap-6">
+            {profiles.map((social) => (
+              <li key={social.name}>
+                <motion.a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  title={social.name}
+                  className="block rounded-full border border-[#a3a2c3] bg-surface-muted p-3 backdrop-blur-sm transition-colors hover:border-accent"
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img src={social.icon} alt="" className="h-8 w-8 object-contain md:h-10 md:w-10" />
+                </motion.a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Contact Form */}
+        <motion.div
+          className="relative overflow-hidden rounded-2xl border border-[#a3a2c3]/60 bg-surface-muted p-6 backdrop-blur-sm transition-colors focus-within:border-accent/60 md:p-8"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <motion.h3 
-            className="text-[#5cb6ff] text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            AHMED FAIYAZ
-          </motion.h3>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <motion.p 
-              className="text-[#5cb6ff] text-xl md:text-2xl mb-2 hover:text-[#6ec5ff] transition-colors cursor-default"
-              whileHover={{ x: 5 }}
-            >
-              080 1299 1035
-            </motion.p>
-            <motion.p 
-              className="text-[#5cb6ff] text-xl md:text-2xl hover:text-[#6ec5ff] transition-colors cursor-default"
-              whileHover={{ x: 5 }}
-            >
-              wc.ahmedo@gmail.com
-            </motion.p>
-          </motion.div>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative"
-              aria-label={social.name}
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                duration: 0.5, 
-                delay: 0.5 + index * 0.05,
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{ y: -8, scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div 
-                className="backdrop-blur-sm border border-[#a3a2c3] rounded-full p-3 relative overflow-hidden"
-                style={{ backgroundColor: "var(--color-surface-muted)" }}
-                whileHover={{ borderColor: "#5cb6ff" }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Glow effect on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#5cb6ff]/20 to-[#4373b5]/20 opacity-0 group-hover:opacity-100 rounded-full"
-                  transition={{ duration: 0.3 }}
-                />
-                
-                {/* Rotating background on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#5cb6ff]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
-                
-                <img
-                  src={social.icon}
-                  alt={social.name}
-                  className="w-8 h-8 md:w-10 md:h-10 object-contain relative z-10"
-                />
-              </motion.div>
-
-              {/* Tooltip on hover */}
-              <motion.div
-                className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#5cb6ff] text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none"
-                initial={{ y: 10 }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {social.name}
-                <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-[#5cb6ff] rotate-45" />
-              </motion.div>
-
-              {/* Outer glow */}
-              <motion.div
-                className="absolute inset-0 bg-[#5cb6ff] rounded-full blur-xl opacity-0 group-hover:opacity-30"
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-          ))}
-        </motion.div>
-
-        {/* Contact Form */}
-        <motion.div 
-          className="backdrop-blur-sm border border-[#a3a2c3] rounded-2xl p-6 md:p-8 relative overflow-hidden"
-          style={{ backgroundColor: "var(--color-surface-muted)" }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          {/* Background gradient effect */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-[#5cb6ff]/5 via-transparent to-[#4373b5]/5 opacity-0"
-            animate={{ opacity: focusedField ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-          />
-
-          <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Name Field */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <label htmlFor="name" className="block text-[#5cb6ff] mb-2">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="mb-2 block text-accent">
                   {t("contact.name")}
                 </label>
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
-                    placeholder={t("contact.namePlaceholder")}
-                    onFocus={() => setFocusedField("name")}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                </motion.div>
-              </motion.div>
-
-              {/* Email Field */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <label htmlFor="email" className="block text-[#5cb6ff] mb-2">
-                  {t("contact.email")}
-                </label>
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
-                    placeholder={t("contact.emailPlaceholder")}
-                    onFocus={() => setFocusedField("email")}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-            
-            {/* Subject Field */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <label htmlFor="subject" className="block text-[#5cb6ff] mb-2">
-                {t("contact.subject")}
-              </label>
-              <motion.div
-                whileFocus={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-              >
                 <input
                   type="text"
-                  id="subject"
-                  className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 transition-all"
-                  placeholder={t("contact.subjectPlaceholder")}
-                  onFocus={() => setFocusedField("subject")}
-                  onBlur={() => setFocusedField(null)}
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  required
+                  className={inputClass}
+                  placeholder={t("contact.namePlaceholder")}
                 />
-              </motion.div>
-            </motion.div>
-            
-            {/* Message Field */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <label htmlFor="message" className="block text-[#5cb6ff] mb-2">
+              </div>
+              <div>
+                <label htmlFor="email" className="mb-2 block text-accent">
+                  {t("contact.email")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  className={inputClass}
+                  placeholder={t("contact.emailPlaceholder")}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="subject" className="mb-2 block text-accent">
+                {t("contact.subject")}
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                className={inputClass}
+                placeholder={t("contact.subjectPlaceholder")}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="mb-2 block text-accent">
                 {t("contact.message")}
               </label>
-              <motion.div
-                whileFocus={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-              >
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full bg-[color:var(--color-input-bg)] border border-[#2378ee] rounded-lg px-4 py-3 text-[color:var(--color-text-primary)] focus:border-[#5cb6ff] focus:outline-none focus:ring-2 focus:ring-[#5cb6ff]/20 resize-none transition-all"
-                  placeholder={t("contact.messagePlaceholder")}
-                  onFocus={() => setFocusedField("message")}
-                  onBlur={() => setFocusedField(null)}
-                ></textarea>
-              </motion.div>
-            </motion.div>
-            
-            {/* Submit Button */}
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-            >
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                required
+                className={`${inputClass} resize-y`}
+                placeholder={t("contact.messagePlaceholder")}
+              />
+            </div>
+
+            <div className="flex flex-col items-center gap-3">
               <motion.button
                 type="submit"
-                className="bg-[#5099ff] text-white px-8 md:px-12 py-3 md:py-4 rounded-full border border-white text-lg md:text-xl relative overflow-hidden group"
-                whileHover={{ scale: 1.05 }}
+                disabled={sending}
+                className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white bg-brand px-8 py-3 text-lg text-white transition-colors hover:bg-brand-hover disabled:opacity-80 md:px-12 md:py-4 md:text-xl"
+                whileHover={sending ? undefined : { scale: 1.05, boxShadow: "0 0 25px rgba(80, 153, 255, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                disabled={submitted}
               >
-                {/* Gradient overlay on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#5cb6ff] to-[#4088ee] opacity-0 group-hover:opacity-100"
-                  transition={{ duration: 0.3 }}
+                <span
+                  className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                  aria-hidden="true"
                 />
-                
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: submitted ? "0%" : "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
-                />
-
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  {submitted ? (
-                    <>
-                      <CheckCircle2 size={20} />
-                      {t("contact.messageSent")}
-                    </>
-                  ) : (
-                    <>
-                      {t("contact.sendButton")}
-                      <motion.span
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <Send size={20} />
-                      </motion.span>
-                    </>
-                  )}
+                <span className="relative" aria-live="polite">
+                  {sending ? t("contact.opening") : t("contact.sendButton")}
                 </span>
-
-                {/* Border glow on hover */}
-                <motion.div
-                  className="absolute inset-0 border-2 border-[#5cb6ff]/50 rounded-full opacity-0 group-hover:opacity-100"
-                  transition={{ duration: 0.3 }}
-                />
+                <Send size={20} className="relative transition-transform group-hover:translate-x-1" />
               </motion.button>
-            </motion.div>
+              <p className="text-center text-sm text-fg-muted">{t("contact.formNote")}</p>
+            </div>
           </form>
-
-          {/* Form border glow when focused */}
-          <motion.div
-            className="absolute inset-0 rounded-2xl pointer-events-none"
-            style={{
-              background: "linear-gradient(135deg, rgba(92, 182, 255, 0.3), rgba(67, 115, 181, 0.3))",
-              padding: "2px",
-              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              maskComposite: "exclude",
-            }}
-            animate={{ opacity: focusedField ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-          />
         </motion.div>
       </div>
     </section>
